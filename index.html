@@ -3,38 +3,38 @@
 import { startQuiz } from "./q4.js";
 
 for (;;) {
-	const quiz = [
-		[ "IchigoJamでLEDをつけるには？", "LED1", "LED0", "PRINT1", "CLS", "LED" ],
-		[ "IchigoJamの誕生日は？", "4/1", "1/5", "10/15", "10/10", "1/1", "12/31" ],
-		[ "PEEKコマンドと同じ働きをするコマンドは？", "ASC", "CHR$", "STR$", "POKE", "CLS" ],
-		[ "複雑すぎる式を実行しようとしてでるエラーは？", "Complex expression", "Syntax error", "Out of memory", "Too long", "Illegal argument", ],
-		[ "IchigoJamのプログラムで使える最大サイズは？", "1024byte", "512byte", "4KB", "32KB", "1000文字", "100文字" ],
-		[ "ALT+Cででるキャラクターは？", "ネコ", "イヌ", "宇宙人", "ハート", "宝箱" ],
-		[ "PRINTコマンドの省略形は？", "?", "PRT", "println", "print", "P" ],
-		[ "LCとは何の略？", "LOCATE", "LLC", "LOCATION", "LOCALIZE", "LCC" ],
-		[ "変数の最大値は？", "32767", "32768", "255", "65535", "30000", "1024" ],
-		[ "IchigoJamの名前の由来は？", "1,500円", "15,000円", "福井の特産物", "開発者の誕生日", "CPUの型番" ],
-	];
-	const point = await startQuiz({
-		title: "クイズ Ichigo Q",
-		quiz,
-	});
-	alert(point)
-	if (point == quiz.length) {
-		alert("全問正解！おめでとう！")
-	} else if (point >= quiz.length * .8) {
-		alert(point + "問正解！合格！")
-	} else {
-		alert(point + "問正解でした")
-	}
-	// ダイアログ形式で尋ねたい場合はこちら
-	if (confirm("こどもIchigoJamについて詳しく知りたい")) {
-		location = "https://ichigojam.net/";
-	} else if (confirm("クイズフレームワーク q4.js についてくわしく知りたい")) {
-		location = "https://fukuno.jig.jp/4554";
-	} else if (confirm("もういちど？")) {
-		continue;
-	}
-	break;
+  const quiz = [
+    [ "IchigoJamでLEDをつけるには？", "LED1", "LED0", "PRINT1", "CLS", "LED" ],
+    [ "IchigoJamの誕生日は？", "4/1", "1/5", "10/15", "10/10", "1/1", "12/31" ],
+    [ "PEEKコマンドと同じ働きをするコマンドは？", "ASC", "CHR$", "STR$", "POKE", "CLS" ],
+    [ "複雑すぎる式を実行しようとしてでるエラーは？", "Complex expression", "Syntax error", "Out of memory", "Too long", "Illegal argument", ],
+    [ "IchigoJamのプログラムで使える最大サイズは？", "1024byte", "512byte", "4KB", "32KB", "1000文字", "100文字" ],
+    [ "ALT+Cででるキャラクターは？", "ネコ", "イヌ", "宇宙人", "ハート", "宝箱" ],
+    [ "PRINTコマンドの省略形は？", "?", "PRT", "println", "print", "P" ],
+    [ "LCとは何の略？", "LOCATE", "LLC", "LOCATION", "LOCALIZE", "LCC" ],
+    [ "変数の最大値は？", "32767", "32768", "255", "65535", "30000", "1024" ],
+    [ "IchigoJamの名前の由来は？", "1,500円", "15,000円", "福井の特産物", "開発者の誕生日", "CPUの型番" ],
+  ];
+  const point = await startQuiz({
+    title: "クイズ Ichigo Q",
+    quiz,
+  });
+  alert(point)
+  if (point == quiz.length) {
+    alert("全問正解！おめでとう！")
+  } else if (point >= quiz.length * .8) {
+    alert(point + "問正解！合格！")
+  } else {
+    alert(point + "問正解でした")
+  }
+  // ダイアログ形式で尋ねたい場合はこちら
+  if (confirm("こどもIchigoJamについて詳しく知りたい")) {
+    location = "https://ichigojam.net/";
+  } else if (confirm("クイズフレームワーク q4.js についてくわしく知りたい")) {
+    location = "https://fukuno.jig.jp/4554";
+  } else if (confirm("もういちど？")) {
+    continue;
+  }
+  break;
 }
 </script>

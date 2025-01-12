@@ -10,10 +10,10 @@
 import { startQuiz } from "https://code4fukui.github.io/q4js/q4.js";
 
 const point = await startQuiz({
-	quiz: [
-		[ "IchigoJamでLEDをつけるには？", "LED1", "LED0", "PRINT1", "CLS", "LED" ],
-		[ "IchigoJamの誕生日は？", "4/1", "1/5", "10/15", "10/10", "1/1", "12/31" ],
-	],
+  quiz: [
+    [ "IchigoJamでLEDをつけるには？", "LED1", "LED0", "PRINT1", "CLS", "LED" ],
+    [ "IchigoJamの誕生日は？", "4/1", "1/5", "10/15", "10/10", "1/1", "12/31" ],
+  ],
 });
 console.log("正答数: " + point);
 </script>
