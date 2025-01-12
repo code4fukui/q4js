@@ -31,6 +31,14 @@ const html = `
 </div>
 `;
 
+const fitText = (div) => {
+  let fontSize = 5;
+  while (div.scrollHeight > div.clientHeight || div.scrollWidth > div.clientWidth) {
+    fontSize -= 0.1;
+		div.style.fontSize = `${fontSize}vw`;
+  }
+};
+
 export const startQuiz = async ({ quiz, title = "q4.js", parent = document.body }) => {
   return new Promise(resolve => {
     let nq = 0;
@@ -99,6 +107,7 @@ export const startQuiz = async ({ quiz, title = "q4.js", parent = document.body 
         }
       }
       q.textContent = aquiz[0];
+			fitText(q);
       uienable = true;
     }
 
