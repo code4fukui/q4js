@@ -1,21 +1,18 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/>
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-<meta name="viewport" content="width=device-width"/>
 
 <title>クイズ Ichigo Q - q4.js</title>
 <link rel="apple-touch-icon" href="q4js-icon.png"/>
 <meta property="og:image" content="q4js-ss.png"/>
 <link rel="stylesheet" type="text/css" href="q4js.css"/>
-<script src=fukuno.js></script>
-<script src=q4.js></script>
 
-<script>"use strict"
-window.onload = function() {
-	// タイトル
-	var title = "クイズ Ichigo Q"
-	// 問題文、正解、誤答3つ以上いくつでも
-	var quiz = [
+<script type="module">
+import { startQuiz } from "./q4.js?";
+
+startQuiz({
+	title: "クイズ Ichigo Q",
+	quiz: [
 		[ "IchigoJamでLEDをつけるには？", "LED1", "LED0", "PRINT1", "CLS", "LED" ],
 		[ "IchigoJamの誕生日は？", "4/1", "1/5", "10/15", "10/10", "1/1", "12/31" ],
 		[ "PEEKコマンドと同じ働きをするコマンドは？", "ASC", "CHR$", "STR$", "POKE", "CLS" ],
@@ -26,9 +23,8 @@ window.onload = function() {
 		[ "LCとは何の略？", "LOCATE", "LLC", "LOCATION", "LOCALIZE", "LCC" ],
 		[ "変数の最大値は？", "32767", "32768", "255", "65535", "30000", "1024" ],
 		[ "IchigoJamの名前の由来は？", "1,500円", "15,000円", "福井の特産物", "開発者の誕生日", "CPUの型番" ],
-	]
-	// クリアした時
-	var callback = function() {
+	],
+	onclear: () => {
 		// 即、ジャンプしたい場合はこちら
 //		location = "https://fukuno.jig.jp/2355"
 
@@ -40,10 +36,8 @@ window.onload = function() {
 		} else if (confirm("もういちど？")) {
 			location.reload()
 		}
-	}
-	// クイズスタート
-	startQuiz(title, quiz, callback)
-}
+	},
+});
 </script>
 </head><body>
 
