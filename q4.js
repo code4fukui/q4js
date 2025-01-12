@@ -31,9 +31,8 @@ const html = `
 </div>
 `;
 
-const fitText = (div) => {
-  let fontSize = 5;
-  while (div.scrollHeight > div.clientHeight || div.scrollWidth > div.clientWidth) {
+const fitText = (div, fontSize = 5) => {
+  while (div.scrollHeight > div.clientHeight) {// || div.scrollWidth > div.clientWidth) {
     fontSize -= 0.1;
 		div.style.fontSize = `${fontSize}vw`;
   }
@@ -65,6 +64,7 @@ export const startQuiz = async ({ quiz, title = "q4.js", parent = document.body 
       let first = true;
       for (let i = 0; i < 4; i++) {
         const div = get("ans" + (i + 1));
+				fitText(div);
         div.className = "";
         div.textContent = anss2[i];
         div.no = i;
