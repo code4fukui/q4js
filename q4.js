@@ -31,7 +31,7 @@ const html = `
 </div>
 `;
 
-export const startQuiz = async ({ title, quiz, parent = document.body }) => {
+export const startQuiz = async ({ quiz, title = "q4.js", parent = document.body }) => {
   return new Promise(resolve => {
     let nq = 0;
     let pnt = 0;
