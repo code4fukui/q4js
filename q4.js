@@ -31,8 +31,18 @@ const html = `
 </div>
 `;
 
-const fitText = (div, fontSize = 5) => {
-  while (div.scrollHeight > div.clientHeight) {// || div.scrollWidth > div.clientWidth) {
+const fitTextHeight = (div, fontSize = 5) => {
+	setTimeout(() => {
+		//console.log(div.scrollHeight, div.clientHeight, div.textContent)
+		div.style.fontSize = `${fontSize}vw`;
+		while (div.scrollHeight > div.clientHeight) {
+			fontSize -= 0.1;
+			div.style.fontSize = `${fontSize}vw`;
+		}
+	}, 10);
+};
+const fitTextWidth = (div, fontSize = 5) => {
+  while (div.scrollWidth > div.clientWidth) {
     fontSize -= 0.1;
 		div.style.fontSize = `${fontSize}vw`;
   }
@@ -64,10 +74,10 @@ export const startQuiz = async ({ quiz, title = "q4.js", parent = document.body 
       let first = true;
       for (let i = 0; i < 4; i++) {
         const div = get("ans" + (i + 1));
-				fitText(div);
         div.className = "";
         div.textContent = anss2[i];
         div.no = i;
+				fitTextHeight(div);
         div.onclick = function() {
           if (!uienable) {
             return;
@@ -107,7 +117,7 @@ export const startQuiz = async ({ quiz, title = "q4.js", parent = document.body 
         }
       }
       q.textContent = aquiz[0];
-			fitText(q);
+			fitTextHeight(q, 7);
       uienable = true;
     }
 
